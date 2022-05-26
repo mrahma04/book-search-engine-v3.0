@@ -7,6 +7,7 @@ const typeDefs = gql`
         username: String
         email: String
         password: String
+        savedBooks: [Book]
     }
 
     type Auth {
@@ -14,11 +15,29 @@ const typeDefs = gql`
         user: User
     }
 
+    type Book {
+        bookId: String
+        authors: [String]
+        description: String
+        image: String
+        link: String
+        title: String
+    }
+
     # create common input fields for mutations
     input UserInput {
         username: String
         email: String
         password: String
+    }
+
+    input BookInput {
+        bookId: String
+        authors: [String]
+        description: String
+        image: String
+        link: String
+        title: String
     }
 
     type Query {
@@ -31,6 +50,7 @@ const typeDefs = gql`
     type Mutation {
         addUser(input: UserInput!): Auth
         login(email: String!, password: String!): Auth
+        saveBook(input: BookInput!): User
     }
 `
 
