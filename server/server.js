@@ -6,6 +6,8 @@ const routes = require('./routes');
 const { ApolloServer } = require('apollo-server-express')
 const { typeDefs, resolvers } = require('./schemas')
 
+const { authMiddleware } = require('./utils/auth')
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -21,7 +23,8 @@ if (process.env.NODE_ENV === 'production') {
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  context: authMiddleware
 })
 
 const startApolloServer = async (typeDefs, resolvers) => {
