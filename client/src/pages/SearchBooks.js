@@ -5,7 +5,15 @@ import Auth from '../utils/auth';
 import { saveBook, searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
+import { useQuery } from '@apollo/client'
+import { GET_USERS } from '../utils/queries'
+
 const SearchBooks = () => {
+
+  const { loading, data } = useQuery(GET_USERS)
+  const users = data?.users || []
+  console.log(data)
+
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
