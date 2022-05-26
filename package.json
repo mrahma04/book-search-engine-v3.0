@@ -1,0 +1,23 @@
+{
+  "name": "book-search-engine-v3.0",
+  "version": "1.0.0",
+  "description": "#### This is a budget tracker application that allows both online and offline access/functionality. Users can add expenses and deposits to their budget with or without an Internet connection. When the user enters transactions offline, the total is updated when they come back online.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrahma04/book-search-engine-v3.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrahma04/book-search-engine-v3.0/issues"
+  },
+  "homepage": "https://github.com/mrahma04/book-search-engine-v3.0#readme",
+  "devDependencies": {
+    "concurrently": "^7.2.1"
+  }
+}
